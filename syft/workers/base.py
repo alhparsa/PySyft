@@ -453,7 +453,7 @@ class BaseWorker(AbstractWorker, ObjectStorage):
                 rank = r
                 break
 
-        assert rank != None
+        assert rank is not None
 
         return_value = run_party(plan, rank, world_size, master_addr, master_port, (), {})
         return ObjectMessage(return_value)
@@ -479,7 +479,7 @@ class BaseWorker(AbstractWorker, ObjectStorage):
                 rank = r
                 break
 
-        assert rank != None
+        assert rank is not None
 
         return_value = run_party(jail_runner, rank, world_size, master_addr, master_port, (), {})
         return ObjectMessage(return_value)
